@@ -192,3 +192,34 @@ nav ul li a:hover::after{
 .projects-list .proj:hover a{
     border-color: #fff;
 }
+
+/* --------- Contact ----------  */
+.contact-col-1{
+    flex-basis: 35%;
+}
+.contact-col-1 p{
+    margin-top: 30px;
+}
+.contact-col-1 p i{
+    color: #3F48CC;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.contact-col-2{
+    flex-basis: 60%;
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+.social-icons a:hover{
+    color: #3F48CC;
+    transform: scale(1.5);
+}
