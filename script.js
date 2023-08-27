@@ -22,12 +22,22 @@ function closeMenu(){
 }
 
 // --------- Contact Form --------
-/*const scriptURL = 'https://script.google.com/macros/s/AKfycbz1o8V0jdHH5qOvots2hNILFxXuJhwWn3kJi_u8zFF9uzdQ_-QPrIzj1E2mTHKUZo0n/exec'
-const form = document.forms['submit-to-google-sheet']
+const scriptURL = 'https://script.google.com/macros/s/AKfycbygwpSBodGYybfRpozClAt3sVcIv3rGON3mkTflNycmoxpDVvliZ063StLi-mz4SHOz9g/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg=document.getElementById('msg')
 
-form.addEventListener('submit', e => {
-e.preventDefault()
-fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => console.log('Success!', response))
-    .catch(error => console.error('Error!', error.message))
-})*/
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+            form.reset();
+            console.log('Success!', response)
+            msg.innerHTML='Message sent successfully!';
+            setTimeout(function(){
+                msg.innerHTML="";
+            },5000)
+        })
+      .catch(error => {
+            console.error('Error!', error.message)
+        })
+  })
